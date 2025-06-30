@@ -1,0 +1,22 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+   "compilerOptions": {
+    "jsx": "react-jsx",          // ✅ ou "react" se estiver usando React clássico
+    "module": "esnext",
+    "target": "es6",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["*"],
+       "@/*": ["*"]
+    }
+  },
+  "include": ["src", "jest.setup.ts"]
+}

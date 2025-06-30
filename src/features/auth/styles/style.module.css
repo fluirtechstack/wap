@@ -1,0 +1,10 @@
+.bgImage {
+  background: linear-gradient(
+    to top right,
+    #c6d6f3 0%,
+    #d4c7f5 40%,
+    #f5c7d4 70%,
+    #fff0e6 100%
+  );
+}
+
