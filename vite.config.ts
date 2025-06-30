@@ -1,10 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import path from "path";
-
-
-
+import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -13,7 +10,12 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
+      '@': path.resolve(__dirname, 'src'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
+      '@store': path.resolve(__dirname, 'src/app/store'),
+      '@router': path.resolve(__dirname, 'src/app/router'),
+      '@app': path.resolve(__dirname, 'src/app'),
+    }
+  }
 })

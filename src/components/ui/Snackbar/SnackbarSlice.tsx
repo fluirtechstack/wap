@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
-export interface Snackbar {
+export interface SnackbarState {
   isVisible?: boolean;
   text: string;
   color: string;
@@ -8,7 +8,7 @@ export interface Snackbar {
   duration?: number;
 }
 
-const initialState: Snackbar = {
+const initialState: SnackbarState = {
   isVisible: false,
   text: "",
   color: "",
@@ -20,7 +20,7 @@ const snackbarSlice = createSlice({
   name: "snackbar",
   initialState,
   reducers: {
-    showSnackbar: (state, action: PayloadAction<Snackbar>) => {
+    showSnackbar: (state, action: PayloadAction<SnackbarState>) => {
       state.isVisible = true;
       state.text = action.payload.text;
       state.color = action.payload.color;
@@ -29,9 +29,9 @@ const snackbarSlice = createSlice({
     },
     hideSnackbar: (state) => {
       state.isVisible = false;
-      state.text = "";
-      state.color = "";
-      state.classes = "";
+      // state.text = "";
+      // state.color = "";
+      // state.classes = "";
     },
   },
 });

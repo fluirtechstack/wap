@@ -1,8 +1,8 @@
 .snackbarFadeIn {
-  animation: snackbar-fade-in 0.1s ease-in;
+  animation: snackbar-fade-in 0.5s ease-in forwards;
 }
 .snackbarFadeOut {
-  animation: snackbar-fade-out 0.1s ease-out;
+  animation: snackbar-fade-out 0.5s ease-out forwards;
 }
 
 @keyframes snackbar-fade-in {
@@ -15,6 +15,7 @@
     transform: translateY(0);
   }
 }
+
 @keyframes snackbar-fade-out {
   0% {
     opacity: 1;

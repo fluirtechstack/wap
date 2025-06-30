@@ -1,20 +1,21 @@
 import React, { useState } from "react";
-import TextInput from "../../../components/ui/TextInput";
-import Button from "../../../components/ui/Button";
+import TextInput from "@/components/ui/TextInput";
+import Button from "@/components/ui/Button";
 import { UserIcon, LockClosedIcon } from "@heroicons/react/24/solid";
 import { type loginForm } from "../types";
 import {
+  loginSuccess,
   hideSnackbar,
   showSnackbar,
-  type Snackbar,
-} from "../../../components/ui/Snackbar/SnackbarSlice";
-import { useDispatch } from "react-redux";
+  type SnackbarState,
+} from "@store/index";
+import { useAppDispatch } from "@store/hooks/useRedux";
 
 export default function LoginForm() {
+  const dispatch = useAppDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const dispatch = useDispatch();
 
   function handleLogin(loginForm: loginForm) {
     const { email, password } = loginForm;
@@ -23,17 +24,15 @@ export default function LoginForm() {
     //Simula uma requisição de login
     setTimeout(() => {
       setLoading(false);
-      const snackbar: Snackbar = {
+      const snackbar: SnackbarState = {
         text: `Login realizado com sucesso! ${email} ${password}`,
         color: "bg-lime-600",
         classes: "text-white shadow-lg transition-all duration-300 ease-in-out",
+        isVisible: true,
+        duration: 5000,
       };
       dispatch(showSnackbar(snackbar));
-
-      //Esconde o snackbar após 3 segundos
-      setTimeout(() => {
-        dispatch(hideSnackbar());
-      }, 3000);
+      dispatch(loginSuccess({ token: "token String", user: "user String" }));
     }, 100);
   }
 
