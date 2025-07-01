@@ -4,7 +4,12 @@ import { useAppSelector, useAppDispatch } from "@store/hooks/useRedux";
 export default function MainLayout() {
   const { display } = useAppSelector((state) => state.navigation);
 
-  const menuItens = [
+  type MenuItem = {
+    title: string;
+    url: string;
+  };
+
+  const menuItens: MenuItem[] = [
     {
       title: "Home",
       url: "/home",
