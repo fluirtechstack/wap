@@ -1,6 +1,5 @@
 import styles from "./style.module.css";
-import { useAppSelector } from "@store/hooks/useRedux";
-import { useAppDispatch } from "@store/hooks/useRedux";
+import { useAppSelector, useAppDispatch } from "@store/hooks/useRedux";
 import { hideSnackbar } from "@store/index";
 import { useEffect } from "react";
 

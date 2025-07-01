@@ -1,18 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import TextInput from "@/components/ui/TextInput";
 import Button from "@/components/ui/Button";
 import { UserIcon, LockClosedIcon } from "@heroicons/react/24/solid";
 import { type loginForm } from "../types";
-import {
-  loginSuccess,
-  hideSnackbar,
-  showSnackbar,
-  type SnackbarState,
-} from "@store/index";
+import { loginSuccess, showSnackbar, type SnackbarState } from "@store/index";
 import { useAppDispatch } from "@store/hooks/useRedux";
 
 export default function LoginForm() {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -31,9 +28,16 @@ export default function LoginForm() {
         isVisible: true,
         duration: 5000,
       };
+      const session = {
+        token: "token String",
+        user: "user String",
+        isAuthenticated: true,
+      };
+
       dispatch(showSnackbar(snackbar));
-      dispatch(loginSuccess({ token: "token String", user: "user String" }));
-    }, 100);
+      dispatch(loginSuccess(session));
+      navigate("/pacientes");
+    }, 3000);
   }
 
   return (

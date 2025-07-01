@@ -1,21 +1,20 @@
 // src/features/profissionais/routes.tsx
-import { type RouteObject } from 'react-router-dom'
-import ProfissionalListPage from './pages/ProfissionalListPage'
-import ProfissionalFormPage from './pages/ProfissionalFormPage'
-
+import { type RouteObject } from "react-router-dom";
+import ProfissionalListPage from "./pages/ProfissionalListPage";
+import ProfissionalFormPage from "./pages/ProfissionalFormPage";
 const profissionaisRoutes: RouteObject[] = [
   {
-    path: '/profissionais',
+    path: "profissionais",
     element: <ProfissionalListPage />,
   },
   {
-    path: '/profissionais/novo',
+    path: "/profissionais/novo",
     element: <ProfissionalFormPage />,
   },
   {
-    path: '/profissionais/:id/editar',
+    path: "/profissionais/:id/editar",
     element: <ProfissionalFormPage />,
   },
-]
+];
 
-export default profissionaisRoutes
+export default profissionaisRoutes;
