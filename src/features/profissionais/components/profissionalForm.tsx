@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
+import { useAppSelector, useAppDispatch } from "@store/hooks/useRedux";
 import {
   addProfessional,
   updateProfessional,
   type Professional,
 } from "../profissionalSlice";
 import { useNavigate, useParams } from "react-router-dom";
-import type { RootState } from "../../../app/store/store";
+import type { RootState } from "@store/index";
 import { v4 as uuidv4 } from "uuid";
 
 export default function ProfessionalForm() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
 
-  const existing = useSelector((state: RootState) =>
-    state.professionals.list.find((p) => p.id === id)
+  const existing = useAppSelector((state: RootState) =>
+    state.profissionais.list.find((p) => p.id === id)
   );
 
   const [name, setName] = useState("");
@@ -43,7 +44,7 @@ export default function ProfessionalForm() {
       dispatch(addProfessional(data));
     }
 
-    navigate("/professionals");
+    navigate("/profissionais");
   };
 
   return (

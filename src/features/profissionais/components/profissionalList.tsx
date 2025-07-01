@@ -1,14 +1,14 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { type RootState } from "../../../app/store/store";
+// import { useSelector, useDispatch } from "react-redux";
+import { useAppSelector, useAppDispatch } from "@store/hooks/useRedux";
+import { type RootState } from "@store/index";
 import { removeProfessional } from "../profissionalSlice";
 import { Link } from "react-router-dom";
 
 export default function ProfessionalList() {
-  const professionals = useSelector(
-    (state: RootState) => state.professionals.list
+  const profissionais = useAppSelector(
+    (state: RootState) => state.profissionais.list
   );
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <div className="border-1 border-solid border-slate-400 rounded-lg grid grid-cols-1 gap-4 p-6 max-w-2xl mx-auto">
@@ -22,7 +22,7 @@ export default function ProfessionalList() {
       </Link>
 
       <ul className="divide-y divide-gray-200">
-        {professionals.map((p) => (
+        {profissionais.map((p) => (
           <li key={p.id} className="flex justify-between items-center py-2">
             <div>
               <p className="font-medium">{p.name}</p>

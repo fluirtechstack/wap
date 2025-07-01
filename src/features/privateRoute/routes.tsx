@@ -1,9 +1,7 @@
-import PrivateRoute from "./pages/privateRoute";
 import ProfessionalListPage from "@features/profissionais/pages/ProfissionalListPage";
 
 const privateRoutes = [
   {
-    element: <PrivateRoute />,
     children: [
       {
         path: "/dashboard",

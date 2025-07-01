@@ -3,7 +3,7 @@ import loginRoutes from "@features/auth/routes";
 import profissionaisRoutes from "@features/profissionais/routes";
 import patientsRoutes from "@features/patientsList/routes";
 import privateRoutes from "@features/privateRoute/routes";
-import PrivateRoute from "@features/privateRoute/pages/PrivateRoute";
+import PrivateRouteGuard from "@features/privateRoute/pages/privateRoute";
 import MainLayout from "@/components/ui/Layout/Layout";
 
 const routes = [
@@ -11,9 +11,9 @@ const routes = [
   {
     path: "/",
     element: (
-      <PrivateRoute>
+      <PrivateRouteGuard>
         <MainLayout />
-      </PrivateRoute>
+      </PrivateRouteGuard>
     ),
     children: [...privateRoutes, ...profissionaisRoutes, ...patientsRoutes],
   },

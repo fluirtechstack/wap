@@ -1,7 +1,7 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "@store/hooks/useRedux";
 import { type RootState, showSnackbar, type SnackbarState } from "@store/index";
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 
 interface PrivateRouteProps {
   children: ReactNode;

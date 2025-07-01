@@ -1,0 +1,5 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+const TextInput = ({ value, onChange, placeholder = "", label = "", labelFor = "", type = "text", icon: Icon, }) => {
+    return (_jsxs("div", { className: "relative flex items-center text-gray-400 focus-within:text-white", children: [Icon && (_jsx(Icon, { className: "size-5 absolute mt-7 ml-3 pointer-events-none transition duration-300 ease-in-out" })), _jsxs("div", { className: "w-full", children: [_jsx("label", { htmlFor: labelFor, className: "block mb-2 text-sm font-medium text-gray-300 dark:text-white", children: label + ":" }), _jsx("input", { id: labelFor, name: labelFor, type: type, value: value, onChange: onChange, placeholder: placeholder, className: "w-full pr-3 pl-10 py-2 font-semibold placeholder-gray-300  text-white rounded-md border-none ring-1 dark:ring-gray-500 focus:ring-blue-500 focus:ring-2 hover:ring-blue-500 hover:ring-1 transition duration-300 ease-in-out outline-none dark:bg-gray-500 inset-shadow-xl " })] })] }));
+};
+export default TextInput;

@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "./components/navbar";
-import { useAppSelector, useAppDispatch } from "@store/hooks/useRedux";
+import { useAppSelector } from "@store/hooks/useRedux";
 export default function MainLayout() {
   const { display } = useAppSelector((state) => state.navigation);
 
