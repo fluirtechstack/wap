@@ -14,7 +14,7 @@ export default function PrivateRoute({ children }: PrivateRouteProps) {
   useEffect(() => {
     if (!isAuthenticated) {
       const snackbar: SnackbarState = {
-        text: `É preciso estar logado para acessar este recurso.`,
+        text: `É preciso estar logado para acessar este recurso. pinteba`,
         color: "bg-yellow-600",
         classes: "text-white shadow-lg transition-all duration-300 ease-in-out",
         isVisible: true,

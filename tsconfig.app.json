@@ -21,6 +21,9 @@
       "@router/*": [
         "src/app/router/*"
       ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
       "@app/*": [
         "src/app/*"
       ]

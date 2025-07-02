@@ -1,0 +1,8 @@
+.sidebar {
+  width: 56px;
+  transition: width 0.2s ease-in-out;
+}
+
+.sidebar:hover {
+  width: 256px;
+}

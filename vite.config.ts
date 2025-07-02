@@ -17,6 +17,7 @@ export default defineConfig({
       '@store': path.resolve(__dirname, 'src/app/store'),
       '@router': path.resolve(__dirname, 'src/app/router'),
       '@app': path.resolve(__dirname, 'src/app'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
     }
   }
 })
